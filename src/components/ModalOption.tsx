@@ -6,6 +6,7 @@ type Props = {
   setIsAlarmStart: (value: boolean) => void;
   setAlarmTime: (value: string) => void;
   audioRef: any;
+  setIsRinging: (value: boolean) => void;
 };
 
 const ModalOption = ({
@@ -13,6 +14,7 @@ const ModalOption = ({
   setAlarmTime,
   audioRef,
   setIsAlarmStart,
+  setIsRinging,
 }: Props) => {
   const [snoozeCount, setSnoozeCount] = useState(0);
   /* handle off alarm */
@@ -33,6 +35,7 @@ const ModalOption = ({
     setAlarmTime(new Date(snoozeTime).toLocaleTimeString());
     (audioRef as any).current.pause();
     setIsAlarmStart(false);
+    setIsRinging(false);
     const snooze = JSON.parse(localStorage.getItem("snoozeCount") || "0");
     if (snooze >= 5) {
       swal("Snooze limit reached!", "please turn off alarm ", "error");

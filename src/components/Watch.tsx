@@ -16,6 +16,7 @@ const Watch = (props: Props) => {
   const [currentTime, setCurrentTime] = useState<any>();
   const [isAlarmStart, setIsAlarmStart] = useState(false);
   const [alarmTimeInString, setAlarmTimeInString] = useState<any>();
+  const [isRinging, setIsRinging] = useState(false);
 
   /* audio ref */
   const audioRef = useRef(null);
@@ -48,6 +49,7 @@ const Watch = (props: Props) => {
       const currentTime = new Date().getTime();
       if (alarmTime && alarmTime <= currentTime) {
         (audioRef as any).current.play();
+        setIsRinging(true);
         setIsAlarmStart(alarmTime <= currentTime);
       }
     }, 1000);
@@ -102,6 +104,7 @@ const Watch = (props: Props) => {
           time={alarmTime}
           setAlarmTime={setAlarmTime}
           setIsAlarmStart={setIsAlarmStart}
+          setIsRinging={setIsRinging}
         />
       )}
 
@@ -113,7 +116,7 @@ const Watch = (props: Props) => {
           />
         </audio>
 
-        {alarmTimeInString > 0 && (
+        {alarmTimeInString > 0 && !isRinging && (
           <div className="alarm-set-time">
             <div className="alarm-set-time__title">Alarm will start at</div>
             <div className="alarm-set-time__time "> {countdown()}</div>
