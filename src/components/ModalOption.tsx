@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BsAlarm } from "react-icons/bs";
 import swal from "sweetalert";
 type Props = {
@@ -16,7 +16,6 @@ const ModalOption = ({
   setIsAlarmStart,
   setIsRinging,
 }: Props) => {
-  const [snoozeCount, setSnoozeCount] = useState(0);
   /* handle off alarm */
   const handleAlarmOff = () => {
     (audioRef as any).current.pause();
@@ -31,7 +30,6 @@ const ModalOption = ({
     const snoozeTime = new Date().getTime() + 30000;
     localStorage.setItem("alarmTime", JSON.stringify(snoozeTime));
     localStorage.setItem("snoozeCount", JSON.stringify(snoozeCount + 1));
-    setSnoozeCount(snoozeCount + 1);
     setAlarmTime(new Date(snoozeTime).toLocaleTimeString());
     (audioRef as any).current.pause();
     setIsAlarmStart(false);
