@@ -39,7 +39,6 @@ const ModalOption = ({
       swal("Snooze limit reached!", "please turn off alarm ", "error");
       localStorage.removeItem("alarmTime");
       localStorage.removeItem("snoozeCount");
-      setSnoozeCount(0);
     }
   };
 
