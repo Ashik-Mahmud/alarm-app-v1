@@ -13,4 +13,164 @@
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   animation: fade-in 1s ease-in-out;
+
+  .alarm-text-input {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    .alarm-text-input:focus {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .alarm-text-input::placeholder {
+    color: #fff;
+  }
+  .set-button {
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    .set-button:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .current-time {
+    margin-top: 0rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-family: "Nova Square", cursive;
+    h1 {
+      font-size: 4rem;
+      margin: 0.4rem 0rem;
+    }
+  }
+}
+
+.modal-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  .modal-content {
+    width: 30rem;
+    height: 20rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .modal-body {
+      position: relative;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .modal-icon {
+        font-size: 4rem;
+        animation: animate 0.5s infinite;
+
+        @keyframes animate {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.2);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+
+      .alarm-time {
+        font-size: 2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin: 0.5rem 0rem;
+        font-family: "Nova Square", cursive;
+      }
+
+      .btn-groups {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 2rem;
+        margin-top: 2rem;
+        button {
+          padding: 1rem 2rem;
+          font-size: 1rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.2rem;
+          border: none;
+          border-radius: 0.5rem;
+          background-color: rgba(61, 153, 228, 0.507);
+          color: #333;
+          outline: none;
+          &:last-child {
+            background-color: rgba(255, 0, 0, 0.507);
+          }
+          cursor: pointer;
+          .btn:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+          }
+        }
+      }
+    }
+  }
+}
+
+.alarm-set-time {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-family: "Nova Square", cursive;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  h1 {
+    font-size: 4rem;
+    margin: 0.4rem 0rem;
+  }
+  .alarm-set-time__time {
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-family: "Nova Square", cursive;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 0.4rem 0rem;
+  }
 }
