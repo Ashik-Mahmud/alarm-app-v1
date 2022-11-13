@@ -1,0 +1,25 @@
+@import url(./Style.scss);
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Poppins:wght@400;500&display=swap");
+
+$fonts-nova: "Nova Square", cursive;
+$fonts-poppins: "Poppins", sans-serif;
+
+.poppins {
+  font-family: $fonts-poppins;
+}
+.nova {
+  font-family: $fonts-nova;
+}
+
+/* global css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $fonts-poppins;
+}

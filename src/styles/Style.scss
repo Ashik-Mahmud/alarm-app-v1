@@ -1,0 +1,16 @@
+.watch-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(46, 165, 212);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  animation: fade-in 1s ease-in-out;
+}
