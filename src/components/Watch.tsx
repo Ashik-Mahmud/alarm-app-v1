@@ -51,6 +51,8 @@ const Watch = (props: Props) => {
         const timeDiff = alarmTime - currentTime;
         setTimeout(() => {
           (audioRef as any).current.play();
+          (audioRef as any).current.volume = 1;
+
           setIsRinging(true);
           setIsAlarmStart(true);
         }, timeDiff);
