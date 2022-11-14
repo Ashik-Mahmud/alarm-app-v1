@@ -1,3 +1,4 @@
+import { BiAlarmSnooze } from "react-icons/bi";
 import { BsAlarm } from "react-icons/bs";
 import swal from "sweetalert";
 type Props = {
@@ -50,7 +51,9 @@ const ModalOption = ({
           </div>
           <div className="alarm-time">{time || "00:00:00"}</div>
           <div className="btn-groups">
-            <button onClick={handleSnoozeFor5Mins}>Snooze</button>
+            <button onClick={handleSnoozeFor5Mins}>
+              <BiAlarmSnooze /> Snooze 1+
+            </button>
             <button onClick={handleAlarmOff}>Off</button>
           </div>
         </div>
