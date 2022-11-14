@@ -47,10 +47,13 @@ const Watch = (props: Props) => {
     const alarmTime = JSON.parse(localStorage.getItem("alarmTime") || "0");
     const interval = setInterval(() => {
       const currentTime = new Date().getTime();
-      if (alarmTime && alarmTime <= currentTime) {
-        (audioRef as any).current.play();
-        setIsRinging(true);
-        setIsAlarmStart(alarmTime <= currentTime);
+      if (alarmTime && alarmTime > currentTime) {
+        const timeDiff = alarmTime - currentTime;
+        setTimeout(() => {
+          (audioRef as any).current.play();
+          setIsRinging(true);
+          setIsAlarmStart(true);
+        }, timeDiff);
       }
     }, 1000);
     return () => clearInterval(interval);

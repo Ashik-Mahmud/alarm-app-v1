@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BsAlarm } from "react-icons/bs";
 import swal from "sweetalert";
 type Props = {
@@ -27,7 +26,7 @@ const ModalOption = ({
   /* handle snooze for 5 mins */
   const handleSnoozeFor5Mins = () => {
     const snoozeCount = JSON.parse(localStorage.getItem("snoozeCount") || "0");
-    const snoozeTime = new Date().getTime() + 30000;
+    const snoozeTime = new Date().getTime() + 60000;
     localStorage.setItem("alarmTime", JSON.stringify(snoozeTime));
     localStorage.setItem("snoozeCount", JSON.stringify(snoozeCount + 1));
     setAlarmTime(new Date(snoozeTime).toLocaleTimeString());
@@ -41,8 +40,6 @@ const ModalOption = ({
       localStorage.removeItem("snoozeCount");
     }
   };
-
-  useEffect(() => {}, []);
 
   return (
     <div className="modal-wrapper">
